@@ -13,8 +13,8 @@ const AddModal = ({ tasks, setTasks }: { tasks: Task[]; setTasks: React.Dispatch
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const newTasks = [...tasks];
-    const id = parseInt(useId());
-    newTasks.push({ id, title, composer });
+    newTasks.push({ id: Math.floor(Math.random() * 1000), title, composer });
+
     setTasks(newTasks);
     setTitle('');
     setComposer('');
